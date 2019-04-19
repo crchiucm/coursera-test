@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web form control</title>
+	<script language="JavaScript">
+		function sessionStore()
+		{
+			var text = document.getElementById("url").value;
+			sessionStorage.setItem("url",text);
+			alert("abc");
+		}
+		function sessionGet()
+		{
+			var text = document.getElementById("url").value = sessionStorage.getItem("url");
+		}
+		function Search()
+		{
+			alert(document.getElementById("default").value);
+			var xml = xmlDoc.load("webforms.xml");
+			var value = $(xml).find(document.getElementById("default").value);
+			alert(value);
+
+		}
+	</script>
+</head>
+<body>
+	<h1>web form example</h1>
+	<form method="post" action="webforms.php">
+		<table border="1" cellpadding="10">
+			<tr>
+				<td>Default</td><td><input id="default" name="name"
+				placeholder="Enter your nickname" autofocus>
+				</td>
+			</tr>
+			<tr>
+				<td>URL</td><td><input id="url" type="url" name="url" size="60">
+					<input type="button" value="Store" onclick="sessionStore();">
+					<input type="button" value="Get" onclick="sessionGet();">
+					<input type="button" value="Clear" onclick="sessionClear();">
+				</td>
+			</tr>
+			<td>Eamil</td><td><input id="email" type="email" name="email"></td>
+			<tr>	
+				<td>Range</td><td><input id="Range" type="Range" name="Range" min="0" max="100" step="5" value="40"></td>
+			</tr>
+			<tr>
+				<td>Number</td><td><input id="number" type="number" name="Number"></td>
+			</tr>
+			<tr>
+				<td>Date</td><td><input id="date" type="date" name="date"></td>	
+			</tr>
+			<tr>
+				<td>Week</td><td><input id="week" type="week" name="week"></td>	
+			</tr>
+			<tr>
+				<td>Month</td><td><input id="month" type="month" name="month"></td>	
+			</tr>
+			<tr>
+				<td>Time</td><td><input id="time" type="time" name="time"></td>	
+			</tr>
+			<tr>
+				<td>DateTime</td><td><input id="datetime" type="datetime" name="datetime"></td>	
+			</tr>
+			<tr>	
+				<td>Local Datetime</td><td><input id="datetimelocal" type="datetimelocal" name="datetimelocal"></td>
+			</tr>
+			<tr>	
+				<td>Search Query</td><td><input type="Search" name="query"></td>
+			</tr>
+		</table>
+		<input type="button" value="Search" onclick="Search();">			
+	</form>
+</body>
+</html>
